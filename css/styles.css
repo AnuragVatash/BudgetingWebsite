@@ -1,17 +1,84 @@
+/* General Page Styling */
 body {
+    background-color: #E0F7FA; /* Soft Blue */
+    color: #607D8B; /* Slate Gray */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
 }
 
-header, footer {
-    background-color: #333;
+/* Main Content Area */
+main {
+    background-color: #F5F5F5; /* White Smoke */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #607D8B; /* Slate Gray */
+    margin-bottom: 15px;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Links */
+a {
+    color: #4682B4; /* Steel Blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+button {
+    background-color: #4682B4; /* Steel Blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #5A9BD4; /* Slightly lighter shade of Steel Blue */
+}
+
+/* Borders and Secondary Elements */
+hr, .bordered {
+    border: 1px solid #DCDCDC; /* Light Gray */
+}
+
+.border-box {
+    border: 2px solid #DCDCDC; /* Light Gray */
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+/* Form Elements */
+input, textarea, select {
+    border: 1px solid #DCDCDC; /* Light Gray */
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #607D8B; /* Slate Gray */
     color: white;
     text-align: center;
     padding: 10px 0;
-}
-
-main {
-    padding: 20px;
+    margin-top: 20px;
 }
