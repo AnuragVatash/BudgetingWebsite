@@ -9,7 +9,7 @@ body {
 
 /* Main Content Area */
 main {
-    background-color: #607D8B; /* White Smoke */
+    background-color: #F5F5F5; /* White Smoke */
     padding: 20px;
     margin: 20px;
     border-radius: 8px;
@@ -108,7 +108,7 @@ footer {
 }
 .affordBox {
     background-image: url("/images/affordImage.png");
-    background-size: 900px; /* Ensures the image covers the container */
+    background-size: cover; /* Ensures the image covers the container */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents image repetition */
     color: white;
@@ -139,10 +139,9 @@ footer {
     justify-content: center;
     align-items: center;
 }
-
 .header-logo {
     max-height: 100px; /* Adjust the height as needed */
     width: auto; /* Maintain aspect ratio */
-    float: right; /* Align the logo to the right */
-    margin: 0; /* Remove any margin to prevent unwanted spacing */
+    display: block;
+    margin: 0 auto; /* Center the logo */
 }
