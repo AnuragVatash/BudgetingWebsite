@@ -139,3 +139,9 @@ footer {
     justify-content: center;
     align-items: center;
 }
+.header-logo {
+    max-height: 100px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center the logo */
+}
