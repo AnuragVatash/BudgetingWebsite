@@ -91,9 +91,7 @@ footer {
 
 /* Box styling */
 .loanBox {
-    background-image: url('/images/carloan.png');
-    background-size: 100%; /* Make the image cover the entire box */
-    background-position: center; /* Center the image within the box */
+    background-color: #4682B4; /* Steel Blue */
     color: white;
     width: 500px;
     height: 500px;
@@ -113,4 +111,8 @@ footer {
     align-items: center;
     border-radius: 8px;
     font-size: 1.5em;
+}
+.car-loan-image {
+    max-width: 100%; /* Ensures the image scales down if too large */
+    height: auto; /* Maintains aspect ratio */
 }
