@@ -107,8 +107,8 @@ footer {
     overflow: hidden; /* Ensures that overflowing content is hidden */
 }
 .affordBox {
-    background-image: url("/images/affordImage.png");
-    background-size: 900px; /* Ensures the image covers the container */
+    background-image: url("/images/AffordImage.png");
+    background-size: 500px; /* Ensures the image covers the container */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents image repetition */
     color: white;
