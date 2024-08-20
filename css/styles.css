@@ -108,7 +108,7 @@ footer {
 }
 .affordBox {
     background-image: url("/images/affordImage.png");
-    background-size: cover; /* Ensures the image covers the container */
+    background-size: 900px; /* Ensures the image covers the container */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents image repetition */
     color: white;
