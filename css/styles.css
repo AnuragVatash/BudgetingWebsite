@@ -112,7 +112,11 @@ footer {
     border-radius: 8px;
     font-size: 1.5em;
 }
-.car-loan-image {
+.carLoanImg {
+    max-width: 100%; /* Ensures the image scales down if too large */
+    height: auto; /* Maintains aspect ratio */
+}
+.affordImg{
     max-width: 100%; /* Ensures the image scales down if too large */
     height: auto; /* Maintains aspect ratio */
 }
