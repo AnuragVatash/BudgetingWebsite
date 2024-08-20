@@ -86,12 +86,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Space between the boxes */
+    gap: 40px; /* Increased space between the boxes */
 }
 
 /* Box styling */
-.loanBox {
-    background-image: url("/images/carLoanImage.png");
+.loanBox, .affordBox {
     background-size: cover; /* Ensures the image covers the container */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents image repetition */
@@ -106,22 +105,31 @@ footer {
     position: relative; /* Allows for positioning of the image inside */
     overflow: hidden; /* Ensures that overflowing content is hidden */
 }
+
+/* Specific image styling inside the boxes */
+.carLoanImg {
+    max-width: 100%; /* Ensures the image scales down if too large */
+    height: 60%; /* Maintains aspect ratio */
+    display: block; /* Removes default inline spacing */
+    margin: 0 auto; /* Centers the image inside the box */
+}
+
+.affordImg {
+    max-width: 100%; /* Ensures the image scales down if too large */
+    height: 60%; /* Maintains aspect ratio */
+    display: block; /* Removes default inline spacing */
+    margin: 0 auto; /* Centers the image inside the box */
+}
+
+/* Specific background images for each box */
+.loanBox {
+    background-image: url("/images/carLoanImage.png");
+}
+
 .affordBox {
     background-image: url("/images/AffordImage.png");
-    background-size: 500px; /* Ensures the image covers the container */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents image repetition */
-    color: white;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    justify-content: center; /* Centers items horizontally */
-    align-items: flex-end; /* Aligns items to the bottom of the container */
-    border-radius: 8px;
-    font-size: 1.5em;
-    position: relative; /* Allows for positioning of the image inside */
-    overflow: hidden; /* Ensures that overflowing content is hidden */
 }
+
 
 .carLoanImg {
     max-width: 100%; /* Ensures the image scales down if too large */
