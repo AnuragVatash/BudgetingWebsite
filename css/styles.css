@@ -86,7 +86,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* Increased space between the boxes */
+    gap: 100px; /* Increased space between the boxes */
 }
 
 /* Box styling */
