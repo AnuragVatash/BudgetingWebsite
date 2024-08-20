@@ -90,33 +90,22 @@ footer {
 }
 
 /* Box styling */
-.loanBox {
+.loanBox, .affordBox {
     background-color: #4682B4; /* Steel Blue */
     color: white;
     width: 500px;
     height: 500px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centers items horizontally */
+    align-items: flex-end; /* Aligns items to the bottom of the container */
     border-radius: 8px;
     font-size: 1.5em;
+    position: relative; /* Allows for positioning of the image inside */
+    overflow: hidden; /* Ensures that overflowing content is hidden */
 }
-.affordBox{
-    background-color: #4682B4; /* Steel Blue */
-    color: white;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    font-size: 1.5em;
-}
-.carLoanImg {
+
+.carLoanImg, .affordImg {
     max-width: 100%; /* Ensures the image scales down if too large */
     height: auto; /* Maintains aspect ratio */
-}
-.affordImg{
-    max-width: 100%; /* Ensures the image scales down if too large */
-    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes default inline spacing */
 }
