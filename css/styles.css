@@ -132,6 +132,7 @@ footer {
     max-width: 100%; /* Ensures the image scales down if too large */
     height: auto; /* Maintains aspect ratio */
     display: block; /* Removes default inline spacing */
+    
 }
 
 .aboutSection{
