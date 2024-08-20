@@ -90,8 +90,10 @@ footer {
 }
 
 /* Box styling */
-.box {
-    background-color: #4682B4; /* Steel Blue */
+.loanBox {
+    background-image: url('/images/carloan.png');
+    background-size: 100%; /* Make the image cover the entire box */
+    background-position: center; /* Center the image within the box */
     color: white;
     width: 500px;
     height: 500px;
@@ -101,6 +103,14 @@ footer {
     border-radius: 8px;
     font-size: 1.5em;
 }
-.carLoan{
-    background-image: "/images/carloan";
+.affordBox{
+    background-color: #4682B4; /* Steel Blue */
+    color: white;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 1.5em;
 }
