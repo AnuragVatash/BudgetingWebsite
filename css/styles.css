@@ -32,6 +32,8 @@ body {
     width: 100%; /* Make main content take full width */
     /*max-width: 1200px; /* Optional: Limit the width for readability on large screens */
     min-height: calc(100vh - 60px); /* Make main content fill the screen, accounting for header and footer */
+    background-image: url("/images/homepageBackground.gif");
+    background-size: cover;
 }
 
 /* Container for Loan Boxes */
@@ -89,7 +91,6 @@ body {
     color: white; /* Text color to contrast background */
     width: 100%;
     box-sizing: border-box;
-    margin-top: 50px; /* Adds space above the About Us section */
 }
 
 .aboutImg {
