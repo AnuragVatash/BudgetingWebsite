@@ -4,7 +4,9 @@
     display: block;
     margin: 0 auto; /* Center the logo */
 }
-
+header{
+    background: #E0F7FA;
+}
 /* General Page Styling */
 body {
     background-color: rgba(245, 245, 245, 0.9); /* Fallback color */
