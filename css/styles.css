@@ -21,13 +21,12 @@ body {
 }
 
 /* Main Content Area */
-<<<<<<< HEAD
 .mainContent {
     background-color: #F5F5F5; /* White Smoke */
     padding-top: 20px;
     border-radius: 8px;
     flex-grow: 1;
-=======
+}
 main {
     background-color: rgba(245, 245, 245, 0.9); /* White Smoke with transparency */
     padding: 20px; /* Add padding for spacing */
