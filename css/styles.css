@@ -7,38 +7,84 @@
 
 /* General Page Styling */
 body {
-    background-color: #E0F7FA; /* Fallback color */
+    background-color: #E0F7FA; /* Soft Blue */
     color: #3b4240; /* Slate Gray */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('images/homepageBackground.gif'); /* Background image */
-    background-size: cover; /* Cover the entire page */
-    background-position: center; /* Center the background */
-    background-repeat: no-repeat; /* No repeating */
-    background-attachment: fixed; /* Keeps the background fixed during scroll */
-    min-height: 100vh; /* Ensures the background covers the entire viewport height */
 }
 
 /* Main Content Area */
 main {
-    background-color: rgba(245, 245, 245, 0.9); /* White Smoke with transparency */
-    padding: 20px; /* Add padding for spacing */
+    background-color: #F5F5F5; /* White Smoke */
+    padding-top: 20px;
     border-radius: 8px;
-    box-sizing: border-box; /* Ensure padding doesn’t add to element width */
-    margin: 0 auto; /* Center the content */
-    width: 100%; /* Make main content take full width */
-    max-width: 1200px; /* Optional: Limit the width for readability on large screens */
-    min-height: calc(100vh - 60px); /* Make main content fill the screen, accounting for header and footer */
 }
 
-/* Container for Loan Boxes */
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #607D8B; /* Slate Gray */
+    margin-bottom: 15px;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Links */
+a {
+    color: #4682B4; /* Steel Blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+button {
+    background-color: #4682B4; /* Steel Blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #5A9BD4; /* Slightly lighter shade of Steel Blue */
+}
+
+/* Borders and Secondary Elements */
+hr, .bordered {
+    border: 1px solid #DCDCDC; /* Light Gray */
+}
+
+.border-box {
+    border: 2px solid #DCDCDC; /* Light Gray */
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+/* Form Elements */
+input, textarea, select {
+    border: 1px solid #DCDCDC; /* Light Gray */
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 100px; /* Increased space between the boxes */
-    margin-bottom: 50px; /* Space below the tiles */
 }
 
 /* Box styling */
@@ -84,9 +130,6 @@ main {
     padding: 20px; /* Adjust padding as needed */
     border-radius: 8px;
     color: white; /* Text color to contrast background */
-    width: 100%;
-    box-sizing: border-box;
-    margin-top: 50px; /* Adds space above the About Us section */
 }
 
 .aboutImg {
@@ -107,6 +150,4 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: relative;
-    width: 100%;
 }
