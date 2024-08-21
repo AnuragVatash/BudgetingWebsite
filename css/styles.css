@@ -1,7 +1,13 @@
+.header-logo {
+    max-height: 100px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center the logo */
+}
 /* General Page Styling */
 body {
     background-color: #E0F7FA; /* Soft Blue */
-    color: #607D8B; /* Slate Gray */
+    color: #3b4240; /* Slate Gray */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -10,8 +16,7 @@ body {
 /* Main Content Area */
 main {
     background-color: #F5F5F5; /* White Smoke */
-    padding: 20px;
-    margin: 20px;
+    padding-top: 20px;
     border-radius: 8px;
 }
 
@@ -74,14 +79,6 @@ input, textarea, select {
     margin-bottom: 20px;
 }
 
-/* Footer */
-footer {
-    background-color: #607D8B; /* Slate Gray */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-}
 .container {
     display: flex;
     justify-content: center;
@@ -143,13 +140,26 @@ footer {
     
 }
 
-.aboutSection{
-    justify-content: center;
+.aboutSection {
+    background-color: #607D8B;
+    display: flex;
+    flex-direction: column; /* Makes sure items stack vertically */
     align-items: center;
+    width: 100%; /* Makes the section take up the full width */
+    margin-top: 10px;
 }
-.header-logo {
-    max-height: 100px; /* Adjust the height as needed */
-    width: auto; /* Maintain aspect ratio */
-    display: block;
-    margin: 0 auto; /* Center the logo */
+
+.aboutImg {
+    width: 10%; /* Image takes up the full width */
+    padding-top: 20px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Ensures padding doesn’t overflow the container */
+    display: block; /* Ensures the next item is below the image */
+}
+
+/* Footer */
+footer {
+    background-color: #607D8B; /* Slate Gray */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
 }
