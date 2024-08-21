@@ -36,7 +36,6 @@ main {
     width: 100%; /* Make main content take full width */
     max-width: 1200px; /* Optional: Limit the width for readability on large screens */
     min-height: calc(100vh - 60px); /* Make main content fill the screen, accounting for header and footer */
->>>>>>> ee0992b289f96a049c7c2a9f5be71ea0ed98b121
 }
 
 /* Container for Loan Boxes */
