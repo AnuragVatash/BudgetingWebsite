@@ -34,6 +34,9 @@ body {
     min-height: calc(100vh - 60px); /* Make main content fill the screen, accounting for header and footer */
     background-image: url("/images/homepageBackground.gif");
     background-size: cover;
+    display: flex;
+    justify-content: center; /* Centers the child horizontally */
+    align-items: center; /* Centers the child vertically */
 }
 
 /* Container for Loan Boxes */
@@ -42,8 +45,6 @@ body {
     justify-content: center;
     align-items: center;
     gap: 100px; /* Increased space between the boxes */
-    margin-bottom: 50px; /* Space below the tiles */
-    padding-top: 350px;
 }
 
 /* Box styling */
