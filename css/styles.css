@@ -39,6 +39,7 @@ body {
     align-items: center;
     gap: 100px; /* Increased space between the boxes */
     margin-bottom: 50px; /* Space below the tiles */
+    padding-top: 350px;
 }
 
 /* Box styling */
@@ -61,7 +62,7 @@ body {
 /* Specific image styling inside the boxes */
 .carLoanImg, .affordImg {
     max-width: 100%; /* Ensures the image scales down if too large */
-    height: auto; /* Maintains aspect ratio */
+    height: 50px; /* Maintains aspect ratio */
     display: block; /* Removes default inline spacing */
     margin: 0 auto; /* Centers the image inside the box */
 }
