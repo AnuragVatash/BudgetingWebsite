@@ -7,7 +7,7 @@
 
 /* General Page Styling */
 body {
-    background-color: #E0F7FA; /* Fallback color */
+    background-color: rgba(245, 245, 245, 0.9); /* Fallback color */
     color: #3b4240; /* Slate Gray */
     font-family: Arial, sans-serif;
     margin: 0;
