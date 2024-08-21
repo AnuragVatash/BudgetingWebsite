@@ -4,6 +4,7 @@
     display: block;
     margin: 0 auto; /* Center the logo */
 }
+
 /* General Page Styling */
 body {
     background-color: #E0F7FA; /* Soft Blue */
@@ -104,16 +105,9 @@ input, textarea, select {
 }
 
 /* Specific image styling inside the boxes */
-.carLoanImg {
+.carLoanImg, .affordImg {
     max-width: 100%; /* Ensures the image scales down if too large */
-    height: 60%; /* Maintains aspect ratio */
-    display: block; /* Removes default inline spacing */
-    margin: 0 auto; /* Centers the image inside the box */
-}
-
-.affordImg {
-    max-width: 100%; /* Ensures the image scales down if too large */
-    height: 60%; /* Maintains aspect ratio */
+    height: auto; /* Maintains aspect ratio */
     display: block; /* Removes default inline spacing */
     margin: 0 auto; /* Centers the image inside the box */
 }
@@ -127,33 +121,27 @@ input, textarea, select {
     background-image: url("/images/AffordImage.png");
 }
 
-
-.carLoanImg {
-    max-width: 100%; /* Ensures the image scales down if too large */
-    height: 12%; /* Maintains aspect ratio */
-    display: block; /* Removes default inline spacing */
-}
-.affordImg {
-    max-width: 100%; /* Ensures the image scales down if too large */
-    height: auto; /* Maintains aspect ratio */
-    display: block; /* Removes default inline spacing */
-    
-}
-
+/* About Section */
 .aboutSection {
     background-color: #607D8B;
     display: flex;
     flex-direction: column; /* Makes sure items stack vertically */
     align-items: center;
-    width: 100%; /* Makes the section take up the full width */
-    margin-top: 10px;
+    padding: 20px; /* Adjust padding as needed */
+    border-radius: 8px;
+    color: white; /* Text color to contrast background */
 }
 
 .aboutImg {
-    width: 10%; /* Image takes up the full width */
-    padding-top: 20px; /* Adjust padding as needed */
-    box-sizing: border-box; /* Ensures padding doesn’t overflow the container */
-    display: block; /* Ensures the next item is below the image */
+    width: 10%; /* Image width relative to the section */
+    margin-bottom: 20px; /* Spacing below the image */
+}
+
+.aboutSection p {
+    max-width: 800px; /* Limits the width of the paragraph */
+    text-align: center; /* Centers the text */
+    line-height: 1.8; /* Better readability */
+    margin: 0 auto; /* Centers the paragraph */
 }
 
 /* Footer */
