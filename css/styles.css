@@ -34,7 +34,7 @@ main {
     box-sizing: border-box; /* Ensure padding doesn’t add to element width */
     margin: 0 auto; /* Center the content */
     width: 100%; /* Make main content take full width */
-    max-width: 1200px; /* Optional: Limit the width for readability on large screens */
+    /*max-width: 1200px; /* Optional: Limit the width for readability on large screens */
     min-height: calc(100vh - 60px); /* Make main content fill the screen, accounting for header and footer */
 }
 
