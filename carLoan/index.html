@@ -3,25 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Car Payment Calculator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #E0F7FA; /* Soft Blue background */
             color: #607D8B; /* Slate Gray text */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        h1 {
-            font-size: 2.5em;
+        .header {
+            width: 100%;
+            background-color: #F5F5F5; /* White Smoke background */
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header img {
+            max-width: 515px;
+            max-height: 100px;
+            width: 100%;
+            height: auto;
+        }
+
+        .calculator-box {
+            background-color: #F5F5F5; /* White Smoke background */
+            padding: 20px;
+            border: 1px solid #DCDCDC; /* Light Gray border */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+        .calculator-box h1 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #607D8B; /* Slate Gray */
+        }
+
+        .calculator-box label {
+            display: block;
+            margin-bottom: 10px;
+            color: #607D8B; /* Slate Gray */
+        }
+
+        .calculator-box input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #DCDCDC; /* Light Gray border */
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .calculator-box button {
+            background-color: #4682B4; /* Steel Blue */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1em;
+        }
+
+        .calculator-box button:hover {
+            background-color: #366896; /* Darker shade of Steel Blue */
+        }
+
+        .result-box {
+            margin-top: 20px;
+            background-color: #E0F7FA; /* Soft Blue */
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .result-box p {
+            margin: 0;
+            color: #607D8B; /* Slate Gray */
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <!-- Header Section -->
+    <div class="header">
+        <img src="../images/MainLogo.png" alt="Car Payment Calculator">
+    </div>
+
+    <div class="calculator-box">
+        <h1>Car Payment Calculator</h1>
+        <label for="carPrice">Car Price ($):</label>
+        <input type="number" id="carPrice" placeholder="Enter car price">
+
+        <label for="downPayment">Down Payment ($):</label>
+        <input type="number" id="downPayment" placeholder="Enter down payment">
+
+        <label for="apr">APR (%):</label>
+        <input type="number" id="apr" placeholder="Enter annual percentage rate">
+
+        <label for="loanTerm">Loan Term (years):</label>
+        <input type="number" id="loanTerm" placeholder="Enter loan term in years">
+
+        <button onclick="calculatePayment()">Calculate</button>
+
+        <div class="result-box" id="resultBox" style="display: none;">
+            <p id="monthlyPayment"></p>
+            <p id="yearlyPayment"></p>
+            <p id="totalPayment"></p>
+        </div>
+    </div>
+
+    <script>
+        function calculatePayment() {
+            const carPrice = parseFloat(document.getElementById('carPrice').value);
+            const downPayment = parseFloat(document.getElementById('downPayment').value);
+            const apr = parseFloat(document.getElementById('apr').value) / 100;
+            const loanTerm = parseFloat(document.getElementById('loanTerm').value);
+
+            const loanAmount = carPrice - downPayment;
+            const monthlyInterestRate = apr / 12;
+            const numberOfPayments = loanTerm * 12;
+
+            const monthlyPayment = (loanAmount * monthlyInterestRate) / 
+                (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+
+            const yearlyPayment = monthlyPayment * 12;
+            const totalPayment = monthlyPayment * numberOfPayments;
+
+            document.getElementById('monthlyPayment').textContent = `Monthly Payment: $${monthlyPayment.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+            document.getElementById('yearlyPayment').textContent = `Yearly Payment: $${yearlyPayment.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+            document.getElementById('totalPayment').textContent = `Total Payment: $${totalPayment.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+
+            document.getElementById('resultBox').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
+
