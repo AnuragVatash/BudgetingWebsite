@@ -4,9 +4,10 @@
     display: block;
     margin: 0 auto; /* Center the logo */
 }
-header{
+header {
     background: #E0F7FA;
 }
+
 /* General Page Styling */
 body {
     background-color: rgba(245, 245, 245, 0.9); /* Fallback color */
@@ -26,7 +27,6 @@ body {
 .mainContent {
     background-color: rgba(245, 245, 245, 0.9); /* White Smoke with transparency */
     padding: 20px; /* Add padding for spacing */
-    border-radius: 8px;
     box-sizing: border-box; /* Ensure padding doesn’t add to element width */
     margin: 0 auto; /* Center the content */
     width: 100%; /* Make main content take full width */
@@ -58,7 +58,6 @@ body {
     display: flex;
     justify-content: center; /* Centers items horizontally */
     align-items: flex-end; /* Aligns items to the bottom of the container */
-    border-radius: 8px;
     font-size: 1.5em;
     position: relative; /* Allows for positioning of the image inside */
     overflow: hidden; /* Ensures that overflowing content is hidden */
@@ -88,7 +87,6 @@ body {
     flex-direction: column; /* Makes sure items stack vertically */
     align-items: center;
     padding: 20px; /* Adjust padding as needed */
-    border-radius: 8px;
     color: white; /* Text color to contrast background */
     width: 100%;
     box-sizing: border-box;
