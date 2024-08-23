@@ -4,6 +4,7 @@
     display: block;
     margin: 0 auto; /* Center the logo */
 }
+
 header {
     background: #E0F7FA;
 }
@@ -61,6 +62,7 @@ body {
     font-size: 1.5em;
     position: relative; /* Allows for positioning of the image inside */
     overflow: hidden; /* Ensures that overflowing content is hidden */
+    transition: transform 1s ease-in-out; /* Smooth zoom-in effect */
 }
 
 /* Specific image styling inside the boxes */
@@ -78,6 +80,11 @@ body {
 
 .affordBox {
     background-image: url("/images/AffordImage.png");
+}
+
+/* Hover effect for zoom-in */
+.loanBox:hover, .affordBox:hover {
+    transform: scale(1.05); /* Slight zoom-in effect */
 }
 
 /* About Section */
