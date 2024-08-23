@@ -62,7 +62,7 @@ body {
     font-size: 1.5em;
     position: relative; /* Allows for positioning of the image inside */
     overflow: hidden; /* Ensures that overflowing content is hidden */
-    transition: transform 1s ease-in-out; /* Smooth zoom-in effect */
+    transition: transform 0.5s ease-in-out; /* Faster zoom-in effect */
 }
 
 /* Specific image styling inside the boxes */
