@@ -6,7 +6,6 @@
     <title>Car Affordability Calculator</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
     <header>
         <div class="header-content">
@@ -14,46 +13,46 @@
             <img src="images/MainLogo.png" alt="MyBudget Logo" class="header-logo">
         </div>
     </header>
+    
     <div id="mainContent">
-    <div id="container">
-    <div id="car-affordability-form">
-        <h1>Car Affordability Calculator</h1>
-        
-        <form id="car-affordability-form">
-            <label for="income">Annual Income</label>
-            <input type="number" id="income" name="income" placeholder="Enter your annual income" required>
-    
-            <label for="downpayment">Down Payment</label>
-            <input type="number" id="downpayment" name="downpayment" placeholder="Enter your down payment amount" required>
-    
-            <label for="percentage">Percentage of Income for Car Purchase</label>
-            <input type="range" id="percentage" name="percentage" min="10" max="50" value="35">
-            <div id="percent-display">35%</div>
-    
-            <button type="submit">Check Affordability</button>
-        </form>
-    
-        <p id="result"></p>
+        <div id="container">
+            <div id="car-affordability-form">
+                <h1>Car Affordability Calculator</h1>
+                <form>
+                    <label for="income">Annual Income</label>
+                    <input type="number" id="income" name="income" placeholder="Enter your annual income" required>
+
+                    <label for="downpayment">Down Payment</label>
+                    <input type="number" id="downpayment" name="downpayment" placeholder="Enter your down payment amount" required>
+
+                    <label for="percentage">Percentage of Income for Car Purchase</label>
+                    <input type="range" id="percentage" name="percentage" min="10" max="50" value="35">
+                    <div id="percent-display">35%</div>
+
+                    <button type="submit">Check Affordability</button>
+                </form>
+
+                <p id="result"></p>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-        <footer>
-            <!-- Footer content -->
-            <p>&copy; Auto Loan Calc</p>
-        </footer>
-    </div>
+    
+    <footer>
+        <!-- Footer content -->
+        <p>&copy; Auto Loan Calc</p>
+    </footer>
 
     <script>
         // Update the percent display when the range input changes
         var percentageSlider = document.getElementById('percentage');
         var percentDisplay = document.getElementById('percent-display');
-    
+
         percentageSlider.oninput = function() {
             percentDisplay.textContent = this.value + "%";
         }
-    
+
         // Calculate affordability when the form is submitted
-        document.getElementById('car-affordability-form').addEventListener('submit', function(event) {
+        document.querySelector('#car-affordability-form form').addEventListener('submit', function(event) {
             event.preventDefault();
             
             var income = parseFloat(document.getElementById('income').value);
@@ -65,9 +64,9 @@
                 document.getElementById('result').style.display = 'none';
                 return;
             }
-    
+
             var maxCarPrice = income * percentage + downpayment;
-    
+
             document.getElementById('result').textContent = "Based on your income and down payment, you can afford a car up to $" + maxCarPrice.toFixed(2);
             document.getElementById('result').style.display = 'block'; // Show the result box
         });
