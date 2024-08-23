@@ -31,7 +31,6 @@ body {
     box-sizing: border-box; /* Ensure padding doesn’t add to element width */
     margin: 0 auto; /* Center the content */
     width: 100%; /* Make main content take full width */
-    /*max-width: 1200px; /* Optional: Limit the width for readability on large screens */
     min-height: calc(100vh - 60px); /* Make main content fill the screen, accounting for header and footer */
     background-image: url("/images/homepageBackground.gif");
     background-size: cover;
@@ -62,7 +61,7 @@ body {
     font-size: 1.5em;
     position: relative; /* Allows for positioning of the image inside */
     overflow: hidden; /* Ensures that overflowing content is hidden */
-    transition: transform 0.5s ease-in-out; /* Faster zoom-in effect */
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Faster zoom-in effect and glow */
 }
 
 /* Specific image styling inside the boxes */
@@ -82,9 +81,10 @@ body {
     background-image: url("/images/AffordImage.png");
 }
 
-/* Hover effect for zoom-in */
+/* Hover effect for zoom-in and glow */
 .loanBox:hover, .affordBox:hover {
     transform: scale(1.05); /* Slight zoom-in effect */
+    box-shadow: 0 0 15px 5px rgba(224, 247, 250, 0.8); /* Soft blue glow effect */
 }
 
 /* About Section */
