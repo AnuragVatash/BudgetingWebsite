@@ -69,7 +69,7 @@ label {
 
 #percent-display {
     position: absolute;
-    top: 25px; /* Adjust to position between the label and range input */
+    top: -5px; /* Adjust to position above the range input */
     left: 0;
     right: 0;
     text-align: center;
@@ -91,6 +91,7 @@ input[type="range"] {
     margin-top: 10px; /* Space between percentage display and range input */
     padding: 0; /* Remove default padding */
     box-sizing: border-box; /* Ensure box sizing */
+    margin-top: 20px; /* Move the range input down by 10px */
 }
 
 button[type="submit"] {
