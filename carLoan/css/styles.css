@@ -87,3 +87,15 @@ body {
     color: #607D8B; /* Slate Gray */
     font-weight: bold;
 }
+
+/* Footer */
+footer {
+    background-color: #607D8B; /* Slate Gray */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+}
