@@ -15,29 +15,26 @@
     <!-- Calculator Box -->
     <div class="calculator-box">
         <h1>Car Payment Calculator</h1>
-        <form id="paymentForm">
-            <label for="carPrice">Car Price ($):</label>
-            <input type="number" id="carPrice" placeholder="Enter car price" required>
-    
-            <label for="downPayment">Down Payment ($):</label>
-            <input type="number" id="downPayment" placeholder="Enter down payment" required>
-    
-            <label for="apr">APR (%):</label>
-            <input type="number" id="apr" placeholder="Enter annual percentage rate" required>
-    
-            <label for="loanTerm">Loan Term (years):</label>
-            <input type="number" id="loanTerm" placeholder="Enter loan term in years" required>
-    
-            <button type="submit">Calculate</button>
-    
-            <div class="result-box" id="resultBox" style="display: none;">
-                <p id="monthlyPayment"></p>
-                <p id="yearlyPayment"></p>
-                <p id="totalPayment"></p>
-            </div>
-        </form>
+        <label for="carPrice">Car Price ($):</label>
+        <input type="number" id="carPrice" placeholder="Enter car price">
+
+        <label for="downPayment">Down Payment ($):</label>
+        <input type="number" id="downPayment" placeholder="Enter down payment">
+
+        <label for="apr">APR (%):</label>
+        <input type="number" id="apr" placeholder="Enter annual percentage rate">
+
+        <label for="loanTerm">Loan Term (years):</label>
+        <input type="number" id="loanTerm" placeholder="Enter loan term in years">
+
+        <button onclick="calculatePayment()">Calculate</button>
+
+        <div class="result-box" id="resultBox" style="display: none;">
+            <p id="monthlyPayment"></p>
+            <p id="yearlyPayment"></p>
+            <p id="totalPayment"></p>
+        </div>
     </div>
-    
 
     <!-- Footer Section -->
     <footer>
