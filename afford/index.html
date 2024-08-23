@@ -26,8 +26,10 @@
                     <input type="number" id="downpayment" name="downpayment" placeholder="Enter your down payment amount" required>
 
                     <label for="percentage">Percentage of Income for Car Purchase</label>
-                    <input type="range" id="percentage" name="percentage" min="10" max="50" value="35">
-                    <div id="percent-display">35%</div>
+                    <div id="percentage-container">
+                        <div id="percent-display">35%</div>
+                        <input type="range" id="percentage" name="percentage" min="10" max="50" value="35">
+                    </div>
 
                     <button type="submit">Check Affordability</button>
                 </form>

@@ -34,6 +34,7 @@ h1 {
     justify-content: center; /* Center the form box horizontally */
     align-items: center; /* Center the form box vertically */
     min-height: calc(100vh - 120px); /* Adjust height considering header and footer */
+    padding: 20px; /* Padding to prevent content from touching the edges */
 }
 
 #container {
@@ -48,7 +49,7 @@ h1 {
     border: 1px solid #DCDCDC; /* Light Gray border */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    max-width: 400px;
+    max-width: 420px; /* Slightly expanded width */
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 20px; /* Add margin to prevent overlap with footer */
@@ -58,6 +59,22 @@ label {
     display: block;
     margin-bottom: 10px;
     color: #607D8B; /* Slate Gray */
+}
+
+#percentage-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px; /* Space between the percentage container and other elements */
+}
+
+#percent-display {
+    position: absolute;
+    top: 25px; /* Adjust to position between the label and range input */
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #607D8B; /* Slate Gray */
+    font-size: 1.2em; /* Slightly larger text */
 }
 
 input[type="number"], input[type="range"] {
@@ -70,8 +87,10 @@ input[type="number"], input[type="range"] {
 }
 
 input[type="range"] {
-    width: calc(100% - 20px);
-    margin-top: 10px;
+    width: 100%; /* Full width */
+    margin-top: 10px; /* Space between percentage display and range input */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Ensure box sizing */
 }
 
 button[type="submit"] {
