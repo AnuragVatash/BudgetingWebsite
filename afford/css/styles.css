@@ -1,23 +1,52 @@
 body {
+    background-color: rgba(245, 245, 245, 0.9); /* Fallback color */
+    color: #3b4240; /* Slate Gray */
     font-family: Arial, sans-serif;
-    background-color: #E0F7FA; /* Soft Blue background */
-    color: #607D8B; /* Slate Gray text */
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    background-image: url('images/homepageBackground.gif'); /* Background image */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background */
+    background-repeat: no-repeat; /* No repeating */
+    background-attachment: fixed; /* Keeps the background fixed during scroll */
 }
-
+.header-logo {
+    max-height: 100px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center the logo */
+}
+header {
+    background: #E0F7FA;
+}
 h1 {
     font-size: 1.8em;
     margin-bottom: 20px;
     text-align: center;
     color: #607D8B; /* Slate Gray */
 }
+.mainContent {
+    background-color: rgba(245, 245, 245, 0.9); /* White Smoke with transparency */
+    padding: 20px; /* Add padding for spacing */
+    box-sizing: border-box; /* Ensure padding doesn’t add to element width */
+    margin: 0 auto; /* Center the content */
+    width: 100%; /* Make main content take full width */
+    /*max-width: 1200px; /* Optional: Limit the width for readability on large screens */
+    min-height: calc(100vh - 60px); /* Make main content fill the screen, accounting for header and footer */
+    background-image: url("/images/homepageBackground.gif");
+    background-size: cover;
+    display: flex;
+    justify-content: center; /* Centers the child horizontally */
+    align-items: center; /* Centers the child vertically */
+}
 
+/* Container for Loan Boxes */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px; /* Increased space between the boxes */
+}
 #car-affordability-form {
     background-color: #F5F5F5; /* White Smoke background */
     padding: 20px;
@@ -69,4 +98,12 @@ button[type="submit"]:hover {
     text-align: center;
     color: #607D8B; /* Slate Gray */
     font-weight: bold;
+}
+footer {
+    background-color: #607D8B; /* Slate Gray */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
 }
