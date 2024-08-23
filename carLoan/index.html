@@ -9,7 +9,9 @@
 <body>
     <!-- Header Section -->
     <div class="header">
-        <img src="../images/MainLogo.png" alt="Car Payment Calculator">
+        <a href="http://127.0.0.1:5500/index.html">
+            <img src="../images/MainLogo.png" alt="Car Payment Calculator">
+        </a>
     </div>
 
     <!-- Calculator Box -->
@@ -34,6 +36,8 @@
             <p id="yearlyPayment"></p>
             <p id="totalPayment"></p>
         </div>
+        
+        <p id="error" style="color: red; display: none;">Please fill out all fields correctly.</p>
     </div>
 
     <!-- Footer Section -->
@@ -47,6 +51,16 @@
             const downPayment = parseFloat(document.getElementById('downPayment').value);
             const apr = parseFloat(document.getElementById('apr').value) / 100;
             const loanTerm = parseFloat(document.getElementById('loanTerm').value);
+
+            // Check if any field is empty or invalid
+            if (isNaN(carPrice) || isNaN(downPayment) || isNaN(apr) || isNaN(loanTerm) || 
+                carPrice <= 0 || downPayment < 0 || apr < 0 || loanTerm <= 0) {
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('resultBox').style.display = 'none';
+                return;
+            } else {
+                document.getElementById('error').style.display = 'none';
+            }
 
             const loanAmount = carPrice - downPayment;
             const monthlyInterestRate = apr / 12;
