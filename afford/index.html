@@ -20,23 +20,29 @@
         <div id="container">
             <div id="car-affordability-form">
                 <h1>Car Affordability Calculator</h1>
-                <form>
-                    <label for="income">Annual Income</label>
-                    <input type="text" id="income" name="income" placeholder="Enter your annual income" required oninput="formatInput(this)">
+                <form id="carCalcForm">
+                    <label for="carPrice">Car Price</label>
+                    <input type="text" id="carPrice" name="carPrice" placeholder="Enter the car price" required oninput="formatInput(this)">
 
-                    <label for="downpayment">Down Payment</label>
-                    <input type="text" id="downpayment" name="downpayment" placeholder="Enter your down payment amount" required oninput="formatInput(this)">
+                    <label for="downPayment">Down Payment</label>
+                    <input type="text" id="downPayment" name="downPayment" placeholder="Enter your down payment amount" required oninput="formatInput(this)">
 
-                    <label for="percentage">Percentage of Income for Car Purchase</label>
-                    <div id="percentage-container">
-                        <div id="percent-display">35%</div>
-                        <input type="range" id="percentage" name="percentage" min="10" max="50" value="35">
-                    </div>
+                    <label for="apr">APR (%)</label>
+                    <input type="text" id="apr" name="apr" placeholder="Enter the APR" required>
 
-                    <button type="submit">Check Affordability</button>
+                    <label for="loanTerm">Loan Term (years)</label>
+                    <input type="text" id="loanTerm" name="loanTerm" placeholder="Enter the loan term in years" required>
+
+                    <button type="submit">Calculate Payment</button>
                 </form>
 
-                <p id="result"></p>
+                <div id="error" style="display:none; color:red;">Please fill in all fields correctly.</div>
+
+                <div id="resultBox" class="result-box">
+                    <p id="monthlyPayment"></p>
+                    <p id="yearlyPayment"></p>
+                    <p id="totalPayment"></p>
+                </div>                
             </div>
         </div>
     </div>
@@ -49,48 +55,54 @@
     <script>
         // Format input with commas
         function formatInput(element) {
-            // Remove non-numeric characters except commas
             let value = element.value.replace(/[^0-9]/g, '');
-            // Convert to number and format with commas
             if (value !== '') {
                 value = parseFloat(value).toLocaleString('en-US');
             }
             element.value = value;
         }
 
-        // Remove commas and return numeric value
+        // Calculate payment when the form is submitted
+        document.getElementById('carCalcForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            calculatePayment();
+        });
+
+        function calculatePayment() {
+            const carPrice = parseFormattedValue(document.getElementById('carPrice').value);
+            const downPayment = parseFormattedValue(document.getElementById('downPayment').value);
+            const apr = parseFloat(document.getElementById('apr').value) / 100;
+            const loanTerm = parseFloat(document.getElementById('loanTerm').value);
+
+            if (isNaN(carPrice) || isNaN(downPayment) || isNaN(apr) || isNaN(loanTerm) || 
+                carPrice <= 0 || downPayment < 0 || apr < 0 || loanTerm <= 0) {
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('resultBox').style.display = 'none';
+                return;
+            } else {
+                document.getElementById('error').style.display = 'none';
+            }
+
+            const loanAmount = carPrice - downPayment;
+            const monthlyInterestRate = apr / 12;
+            const numberOfPayments = loanTerm * 12;
+
+            const monthlyPayment = (loanAmount * monthlyInterestRate) / 
+                (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+
+            const yearlyPayment = monthlyPayment * 12;
+            const totalPayment = monthlyPayment * numberOfPayments;
+
+            document.getElementById('monthlyPayment').textContent = `Monthly Payment: $${monthlyPayment.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+            document.getElementById('yearlyPayment').textContent = `Yearly Payment: $${yearlyPayment.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+            document.getElementById('totalPayment').textContent = `Total Payment: $${totalPayment.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+
+            document.getElementById('resultBox').style.display = 'block';
+        }
+
         function parseFormattedValue(value) {
             return parseFloat(value.replace(/,/g, ''));
         }
-
-        // Update the percent display when the range input changes
-        var percentageSlider = document.getElementById('percentage');
-        var percentDisplay = document.getElementById('percent-display');
-
-        percentageSlider.oninput = function() {
-            percentDisplay.textContent = this.value + "%";
-        }
-
-        // Calculate affordability when the form is submitted
-        document.querySelector('#car-affordability-form form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            var income = parseFormattedValue(document.getElementById('income').value);
-            var downpayment = parseFormattedValue(document.getElementById('downpayment').value);
-            var percentage = parseFloat(document.getElementById('percentage').value) / 100;
-            
-            if (isNaN(income) || isNaN(downpayment) || isNaN(percentage)) {
-                // If any field is empty or not a number, do not show the result
-                document.getElementById('result').style.display = 'none';
-                return;
-            }
-
-            var maxCarPrice = income * percentage + downpayment;
-
-            document.getElementById('result').textContent = "Based on your income and down payment, you can afford a car up to $" + maxCarPrice.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            document.getElementById('result').style.display = 'block'; // Show the result box
-        });
     </script>
 </body>
 </html>
-
