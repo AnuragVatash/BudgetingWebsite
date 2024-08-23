@@ -1,101 +1,108 @@
+/* General Page Styling */
 body {
-    background-color: rgba(245, 245, 245, 0.9); /* Fallback color */
-    color: #3b4240; /* Slate Gray */
     font-family: Arial, sans-serif;
+    background-color: #cef2f7; /* Soft Blue background as fallback */
+    color: #607D8B; /* Slate Gray text */
     margin: 0;
     padding: 0;
-    background-image: url('../images/homepageBackground.gif'); /* Background image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../../images/homepageBackground.gif'); /* Path to the background image */
     background-size: cover; /* Cover the entire page */
     background-position: center; /* Center the background */
     background-repeat: no-repeat; /* No repeating */
     background-attachment: fixed; /* Keeps the background fixed during scroll */
+    min-height: 100vh; /* Ensures the background covers the entire viewport height */
+    box-sizing: border-box; /* Ensures padding and borders are included in the element's total width and height */
+}
+
+/* Header Styling */
+header {
+    width: 100%;
+    background-color: #cef2f7; /* Soft Blue background */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
 }
 
 .header-logo {
-    max-height: 100px; /* Adjust the height as needed */
-    width: auto; /* Maintain aspect ratio */
-    display: block;
-    margin: 0 auto; /* Center the logo */
+    max-width: 515px;
+    height: auto;
 }
 
-header {
-    background: #E0F7FA;
-}
-
-h1 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #607D8B; /* Slate Gray */
-}
-
+/* Main Content Container */
 #mainContent {
     display: flex;
-    justify-content: center; /* Center the form box horizontally */
-    align-items: center; /* Center the form box vertically */
-    min-height: calc(100vh - 120px); /* Adjust height considering header and footer */
-    padding: 20px; /* Padding to prevent content from touching the edges */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
+/* Container Styling */
 #container {
-    display: flex;
-    justify-content: center;
+    max-width: 600px;
     width: 100%;
 }
 
+/* Form Styling */
 #car-affordability-form {
     background-color: #F5F5F5; /* White Smoke background */
     padding: 20px;
     border: 1px solid #DCDCDC; /* Light Gray border */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    max-width: 420px; /* Slightly expanded width */
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 20px; /* Add margin to prevent overlap with footer */
 }
 
-label {
+#car-affordability-form h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #607D8B; /* Slate Gray */
+}
+
+#car-affordability-form label {
     display: block;
     margin-bottom: 10px;
     color: #607D8B; /* Slate Gray */
-    text-align: center; /* Center text alignment */
 }
 
-#percentage-container {
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px; /* Space between the percentage container and other elements */
-}
-
-#percent-display {
-    position: absolute;
-    top: -5px; /* Adjust to position above the range input */
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: #607D8B; /* Slate Gray */
-    font-size: 1.2em; /* Slightly larger text */
-}
-
-input[type="number"], input[type="range"] {
+#car-affordability-form input[type="text"], 
+#car-affordability-form input[type="number"] {
     width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #DCDCDC; /* Light Gray border */
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 1em;
 }
 
-input[type="range"] {
-    width: 100%; /* Full width */
-    margin-top: 10px; /* Space between percentage display and range input */
-    padding: 0; /* Remove default padding */
-    box-sizing: border-box; /* Ensure box sizing */
-    margin-top: 20px; /* Move the range input down by 10px */
+#car-affordability-form input[type="range"] {
+    width: 100%;
 }
 
-button[type="submit"] {
+#percentage-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#percent-display {
+    font-size: 1.2em;
+    color: #607D8B; /* Slate Gray */
+}
+
+#car-affordability-form button {
     background-color: #4682B4; /* Steel Blue */
     color: white;
     border: none;
@@ -106,12 +113,12 @@ button[type="submit"] {
     font-size: 1em;
 }
 
-button[type="submit"]:hover {
+#car-affordability-form button:hover {
     background-color: #366896; /* Darker shade of Steel Blue */
 }
 
+/* Result Styling */
 #result {
-    display: none; /* Initially hidden */
     margin-top: 20px;
     background-color: #E0F7FA; /* Soft Blue */
     padding: 15px;
@@ -121,11 +128,12 @@ button[type="submit"]:hover {
     font-weight: bold;
 }
 
+/* Footer Styling */
 footer {
     background-color: #607D8B; /* Slate Gray */
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: relative;
     width: 100%;
+    margin-top: auto; /* Pushes footer to the bottom of the page */
 }
